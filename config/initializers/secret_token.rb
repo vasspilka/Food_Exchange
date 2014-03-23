@@ -9,4 +9,4 @@
 
 # Make sure your secret_key_base is kept private
 # if you're sharing your code publicly.
-FoodExchange::Application.config.secret_key_base = '284f4a96f46556f453dca69b306dff785ce6062f78ee6bb116cdab310352c8ac448758c1230a603d199a1e510e4315e2578ba2e440be3461c41360a0506d181d'
+FoodExchange::Application.config.secret_key_base = '31bd2077ffe5abf49262d2fa739c3ec78f7b7bf18d3b452816e5290d39ecf51a7ecbdaf1a33cfd97fcf40d1751fcc78c8547f8d4e381a7326a1f51d60e01ca23'
