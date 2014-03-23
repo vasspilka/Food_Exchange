@@ -1,0 +1,35 @@
+<h1>Listing donations</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Recieved</th>
+      <th>Donator</th>
+      <th>Reciever</th>
+      <th>Recieved at</th>
+      <th>Trade address</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @donations.each do |donation| %>
+      <tr>
+        <td><%= donation.recieved %></td>
+        <td><%= donation.donator %></td>
+        <td><%= donation.reciever %></td>
+        <td><%= donation.recieved_at %></td>
+        <td><%= donation.trade_address %></td>
+        <td><%= link_to 'Show', donation %></td>
+        <td><%= link_to 'Edit', edit_donation_path(donation) %></td>
+        <td><%= link_to 'Destroy', donation, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Donation', new_donation_path %>

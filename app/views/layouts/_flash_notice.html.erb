@@ -1,0 +1,6 @@
+<% flash.each do |name, msg| %>
+  <div data-alert class="alert <%= name == :notice ? "success" : "error" %>">
+    <%= msg %>
+    <a href="#" class="close"><i class="icon-circled-cross"> </i></a>
+  </div>
+<% end %> 
