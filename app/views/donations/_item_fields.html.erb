@@ -1,0 +1,11 @@
+  <fieldset class="form-inputs">
+    <%= f.association :donation %>
+    <%= f.input :title %>
+    <%= f.input :details %>
+    <%= f.input :type %>
+    <%= f.input :expiration_date %>
+    <%= f.input :image %>
+
+    <%= f.input :_destroy , :as => :hidden %>
+    <%= link_to "remove", '#', class: "remove_fields" %>
+  </fieldset>

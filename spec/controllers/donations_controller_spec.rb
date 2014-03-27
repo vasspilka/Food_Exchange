@@ -23,7 +23,7 @@ describe DonationsController do
   # This should return the minimal set of attributes required to create a valid
   # Donation. As you add validations to Donation, be sure to
   # adjust the attributes here as well.
-  let(:valid_attributes) { { "donator" => "" } }
+  let(:valid_attributes) { { "title" => "MyString" } }
 
   # This should return the minimal set of values that should be in the session
   # in order to pass any filters (e.g. authentication) defined in
@@ -85,14 +85,14 @@ describe DonationsController do
       it "assigns a newly created but unsaved donation as @donation" do
         # Trigger the behavior that occurs when invalid params are submitted
         Donation.any_instance.stub(:save).and_return(false)
-        post :create, {:donation => { "donator" => "invalid value" }}, valid_session
+        post :create, {:donation => { "title" => "invalid value" }}, valid_session
         assigns(:donation).should be_a_new(Donation)
       end
 
       it "re-renders the 'new' template" do
         # Trigger the behavior that occurs when invalid params are submitted
         Donation.any_instance.stub(:save).and_return(false)
-        post :create, {:donation => { "donator" => "invalid value" }}, valid_session
+        post :create, {:donation => { "title" => "invalid value" }}, valid_session
         response.should render_template("new")
       end
     end
@@ -106,8 +106,8 @@ describe DonationsController do
         # specifies that the Donation created on the previous line
         # receives the :update_attributes message with whatever params are
         # submitted in the request.
-        Donation.any_instance.should_receive(:update).with({ "donator" => "" })
-        put :update, {:id => donation.to_param, :donation => { "donator" => "" }}, valid_session
+        Donation.any_instance.should_receive(:update).with({ "title" => "MyString" })
+        put :update, {:id => donation.to_param, :donation => { "title" => "MyString" }}, valid_session
       end
 
       it "assigns the requested donation as @donation" do
@@ -128,7 +128,7 @@ describe DonationsController do
         donation = Donation.create! valid_attributes
         # Trigger the behavior that occurs when invalid params are submitted
         Donation.any_instance.stub(:save).and_return(false)
-        put :update, {:id => donation.to_param, :donation => { "donator" => "invalid value" }}, valid_session
+        put :update, {:id => donation.to_param, :donation => { "title" => "invalid value" }}, valid_session
         assigns(:donation).should eq(donation)
       end
 
@@ -136,7 +136,7 @@ describe DonationsController do
         donation = Donation.create! valid_attributes
         # Trigger the behavior that occurs when invalid params are submitted
         Donation.any_instance.stub(:save).and_return(false)
-        put :update, {:id => donation.to_param, :donation => { "donator" => "invalid value" }}, valid_session
+        put :update, {:id => donation.to_param, :donation => { "title" => "invalid value" }}, valid_session
         response.should render_template("edit")
       end
     end

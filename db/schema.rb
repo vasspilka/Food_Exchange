@@ -11,11 +11,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140327133350) do
+ActiveRecord::Schema.define(version: 20140327153643) do
 
   create_table "donations", force: true do |t|
+    t.string   "title"
     t.integer  "donator_id"
     t.integer  "receiver_id"
+    t.text     "description"
     t.datetime "exchange_time"
     t.string   "exchange_address"
     t.float    "latitude"
@@ -32,7 +34,7 @@ ActiveRecord::Schema.define(version: 20140327133350) do
   create_table "items", force: true do |t|
     t.integer  "donation_id"
     t.string   "title"
-    t.string   "details"
+    t.text     "details"
     t.string   "type"
     t.date     "expiration_date"
     t.string   "image_file_name"

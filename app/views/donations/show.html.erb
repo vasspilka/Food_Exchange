@@ -11,11 +11,17 @@
 </div>
 
 <dl class="dl-horizontal">
+  <dt>Title:</dt>
+  <dd><%= @donation.title %></dd>
+
   <dt>Donator:</dt>
   <dd><%= @donation.donator %></dd>
 
   <dt>Receiver:</dt>
   <dd><%= @donation.receiver %></dd>
+
+  <dt>Description:</dt>
+  <dd><%= @donation.description %></dd>
 
   <dt>Exchange time:</dt>
   <dd><%= @donation.exchange_time %></dd>
@@ -31,5 +37,8 @@
 
   <dt>Received:</dt>
   <dd><%= @donation.received %></dd>
+
+  <dt>Valid donation:</dt>
+  <dd><%= @donation.valid_donation %></dd>
 
 </dl>
