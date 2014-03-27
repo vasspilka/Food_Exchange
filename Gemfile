@@ -12,6 +12,9 @@ gem 'jquery-rails'
 gem 'jbuilder', '~> 1.2'
 gem 'underscore-rails'
 
+# File upload
+gem 'paperclip'
+
 # Internationalization & Location
 gem 'rails-i18n'      # Locale & Languages
 gem "geocoder"        # Handling geographic data
@@ -19,11 +22,18 @@ gem 'gmaps4rails'     # Google maps intergration
 
 
 # Front-end gems
-gem 'compass-rails', '~> 1.1.3'
 gem 'entypo-rails'
 gem "breakpoint"
 gem 'sass-rails'
 gem 'simple_form'
+gem 'compass-rails', '~> 1.1.3'
+
+# Bootstrap so I can work with a nicer interface
+gem 'bootstrap-sass', '~> 3.1.1'
+gem 'bootstrap-generators', :git => 'git://github.com/decioferreira/bootstrap-generators.git'
+
+
+
 
 group :development do
   gem 'sqlite3'
