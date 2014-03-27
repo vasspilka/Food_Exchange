@@ -1,29 +1,32 @@
-<p id="notice"><%= notice %></p>
+<div class="page-header">
+  <%= link_to items_path, :class => 'btn btn-default' do %>
+    <span class="glyphicon glyphicon-list-alt"></span>
+    Back
+  <% end %>
+  <%= link_to edit_item_path(@item), :class => 'btn btn-primary' do %>
+    <span class="glyphicon glyphicon-pencil"></span>
+    Edit
+  <% end %>
+  <h1>Show item</h1>
+</div>
 
-<p>
-  <strong>Donation:</strong>
-  <%= @item.donation %>
-</p>
+<dl class="dl-horizontal">
+  <dt>Donation:</dt>
+  <dd><%= @item.donation %></dd>
 
-<p>
-  <strong>Title:</strong>
-  <%= @item.title %>
-</p>
+  <dt>Title:</dt>
+  <dd><%= @item.title %></dd>
 
-<p>
-  <strong>Photo:</strong>
-  <%= @item.photo %>
-</p>
+  <dt>Details:</dt>
+  <dd><%= @item.details %></dd>
 
-<p>
-  <strong>Expiration date:</strong>
-  <%= @item.expiration_date %>
-</p>
+  <dt>Type:</dt>
+  <dd><%= @item.type %></dd>
 
-<p>
-  <strong>Details:</strong>
-  <%= @item.details %>
-</p>
+  <dt>Expiration date:</dt>
+  <dd><%= @item.expiration_date %></dd>
 
-<%= link_to 'Edit', edit_item_path(@item) %> |
-<%= link_to 'Back', items_path %>
+  <dt>Image:</dt>
+  <dd><%= @item.image %></dd>
+
+</dl>

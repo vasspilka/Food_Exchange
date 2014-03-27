@@ -5,5 +5,4 @@ class Item < ActiveRecord::Base
 
   validates_attachment :image,
   :content_type => { :content_type => ["image/jpeg","image/jpg", "image/gif", "image/png"] }
-
 end

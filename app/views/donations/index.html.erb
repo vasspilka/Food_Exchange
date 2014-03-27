@@ -1,35 +1,41 @@
-<h1>Listing donations</h1>
+<div class="page-header">
+  <%= link_to new_donation_path, :class => 'btn btn-primary' do %>
+    <span class="glyphicon glyphicon-plus"></span>
+    New Donation
+  <% end %>
+  <h1>Listing donations</h1>
+</div>
 
-<table>
-  <thead>
-    <tr>
-      <th>Recieved</th>
-      <th>Donator</th>
-      <th>Reciever</th>
-      <th>Recieve Date</th>
-      <th>Trade address</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @donations.each do |donation| %>
+<div class="table-responsive">
+  <table class="table table-striped table-bordered table-hover">
+    <thead>
       <tr>
-        <td><%= donation.recieved %></td>
-        <td><%= donation.donator %></td>
-        <td><%= donation.reciever %></td>
-        <td><%= donation.recieve_date %></td>
-        <td><%= donation.trade_address %></td>
-        <td><%= link_to 'Show', donation %></td>
+            <th>Donator</th>
+            <th>Receiver</th>
+            <th>Exchange time</th>
+            <th>Exchange address</th>
+            <th>Latitude</th>
+            <th>Longitude</th>
+            <th>Received</th>
+            <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <%= content_tag_for(:tr, @donations) do |donation| %>
+            <td><%= donation.donator %></td>
+            <td><%= donation.receiver %></td>
+            <td><%= donation.exchange_time %></td>
+            <td><%= donation.exchange_address %></td>
+            <td><%= donation.latitude %></td>
+            <td><%= donation.longitude %></td>
+            <td><%= donation.received %></td>
+            <td><%= link_to 'Show', donation %></td>
         <td><%= link_to 'Edit', edit_donation_path(donation) %></td>
         <td><%= link_to 'Destroy', donation, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Donation', new_donation_path %>
+      <% end %>
+    </tbody>
+  </table>
+</div>

@@ -1,1 +1,1 @@
-json.extract! @donation, :id, :recieved, :donator_id, :reciever_id, :recieve_date, :trade_address, :created_at, :updated_at
+json.extract! @donation, :id, :donator_id, :receiver_id, :exchange_time, :exchange_address, :latitude, :longitude, :received, :valid_donation, :created_at, :updated_at

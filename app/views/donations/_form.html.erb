@@ -1,37 +1,15 @@
-<%= form_for(@donation) do |f| %>
-  <% if @donation.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@donation.errors.count, "error") %> prohibited this donation from being saved:</h2>
+<%= simple_form_for(@donation) do |f| %>
+  <%= f.error_notification %>
 
-      <ul>
-      <% @donation.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
+  <div class="form-inputs">
+    <%= f.association :donator %>
+    <%= f.association :receiver %>
+    <%= f.input :exchange_time %>
+    <%= f.input :exchange_address %>
+    <%= f.input :received %>
+  </div>
 
-  <div class="field">
-    <%= f.label :received %><br>
-    <%= f.check_box :received %>
-  </div>
-  <div class="field">
-    <%= f.label :donator %><br>
-    <%= f.text_field :donator %>
-  </div>
-  <div class="field">
-    <%= f.label :receiver %><br>
-    <%= f.text_field :receiver %>
-  </div>
-  <div class="field">
-    <%= f.label :receieve_date %><br>
-    <%= f.date_select :receive_date %>
-  </div>
-  <div class="field">
-    <%= f.label :trade_address %><br>
-    <%= f.text_field :trade_address %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
+  <div class="form-actions">
+    <%= f.button :submit %>
   </div>
 <% end %>

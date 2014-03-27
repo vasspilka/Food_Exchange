@@ -11,14 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140326142600) do
+ActiveRecord::Schema.define(version: 20140327133350) do
 
   create_table "donations", force: true do |t|
-    t.boolean  "received"
     t.integer  "donator_id"
     t.integer  "receiver_id"
-    t.date     "receive_date"
-    t.string   "trade_address"
+    t.datetime "exchange_time"
+    t.string   "exchange_address"
+    t.float    "latitude"
+    t.float    "longitude"
+    t.boolean  "received"
+    t.boolean  "valid_donation"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -29,15 +32,15 @@ ActiveRecord::Schema.define(version: 20140326142600) do
   create_table "items", force: true do |t|
     t.integer  "donation_id"
     t.string   "title"
-    t.string   "photo"
-    t.date     "expiration_date"
     t.string   "details"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.string   "type"
+    t.date     "expiration_date"
     t.string   "image_file_name"
     t.string   "image_content_type"
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   add_index "items", ["donation_id"], name: "index_items_on_donation_id"
