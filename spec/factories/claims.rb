@@ -1,7 +1,7 @@
 # Read about factories at https://github.com/thoughtbot/factory_girl
 
 FactoryGirl.define do
-  factory :vindicator do
+  factory :claim do
     user nil
     donation nil
     suggested_address "MyString"

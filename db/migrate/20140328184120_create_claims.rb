@@ -1,7 +1,7 @@
-class CreateVindicators < ActiveRecord::Migration
+class CreateClaims < ActiveRecord::Migration
   def change
-    create_table :vindicators do |t|
-      t.references :user, index: true
+    create_table :claims do |t|
+      t.belongs_to :user, index: true
       t.references :donation, index: true
       t.string :suggested_address
       t.float :latitude
