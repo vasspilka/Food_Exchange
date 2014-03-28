@@ -5,6 +5,7 @@ FactoryGirl.define do
     user nil
     donation nil
     suggested_address "MyString"
+    suggested_time "2014-03-28 20:45:46"
     latitude 1.5
     longitude 1.5
   end

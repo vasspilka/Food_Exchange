@@ -11,7 +11,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140327153643) do
+ActiveRecord::Schema.define(version: 20140328184546) do
+
+  create_table "claims", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "donation_id"
+    t.string   "suggested_address"
+    t.datetime "suggested_time"
+    t.float    "latitude"
+    t.float    "longitude"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "claims", ["donation_id"], name: "index_claims_on_donation_id"
+  add_index "claims", ["user_id"], name: "index_claims_on_user_id"
 
   create_table "donations", force: true do |t|
     t.string   "title"
