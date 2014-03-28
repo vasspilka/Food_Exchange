@@ -8,4 +8,6 @@ class Donation < ActiveRecord::Base
 
   accepts_nested_attributes_for :items, allow_destroy: true
 
+  validates :title, :donator_id, presence: true
+
 end

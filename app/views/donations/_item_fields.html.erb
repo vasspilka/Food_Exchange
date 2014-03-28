@@ -1,8 +1,11 @@
+  <br>
+  <br>
+
   <fieldset class="form-inputs">
-    <%= f.association :donation %>
+    <%= f.hidden_field :donation, :value => "#{@donation.id}" %>
     <%= f.input :title %>
     <%= f.input :details %>
-    <%= f.input :type %>
+    <%= f.input :type, collection: ["Food","Clothing","Furniture","Electronics","Other"] %>
     <%= f.input :expiration_date %>
     <%= f.input :image %>
 
