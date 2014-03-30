@@ -20,9 +20,10 @@
             <th>Longitude</th>
             <th>Received</th>
             <th>Valid donation</th>
+            <th>Claim Item</th>
             <th></th>
-        <th></th>
-        <th></th>
+            <th></th>
+            <th></th>
       </tr>
     </thead>
 
@@ -38,9 +39,10 @@
             <td><%= donation.longitude %></td>
             <td><%= donation.received %></td>
             <td><%= donation.valid_donation %></td>
+            <td><%= render 'claim', :donation => donation%>
             <td><%= link_to 'Show', donation %></td>
-        <td><%= link_to 'Edit', edit_donation_path(donation) %></td>
-        <td><%= link_to 'Destroy', donation, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            <td><%= link_to 'Edit', edit_donation_path(donation) %></td>
+            <td><%= link_to 'Destroy', donation, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       <% end %>
     </tbody>
   </table>

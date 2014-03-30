@@ -11,4 +11,6 @@ FoodExchange::Application.routes.draw do
   devise_for :users, :controllers => {:registrations => "registrations"}
 
   resources :items, :users, :donations
+
+  resources :claims, only: [:create, :destroy]
 end

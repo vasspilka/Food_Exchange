@@ -8,4 +8,8 @@ class User < ActiveRecord::Base
   has_many :claimed_donations, foreign_key: "receiver_id" , class_name: "Donation"
   has_many :claims
 
+
+  def claim!(donation)
+  	claims.create!(donation_id: donation.id) end	
+
 end

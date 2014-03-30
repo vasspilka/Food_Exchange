@@ -1,0 +1,5 @@
+<%= form_for(current_user.claims.build(donation_id: donation.id),
+             remote: true) do |f| %>
+  <div><%= f.hidden_field :donation_id %></div>
+  <%= f.submit "Claim This", class: "" %>
+<% end %>
