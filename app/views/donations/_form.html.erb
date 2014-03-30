@@ -1,5 +1,5 @@
 <% if current_user %>
-  <%= simple_form_for(@donation) do |f| %>
+  <%= simple_nested_form_for(@donation) do |f| %>
     <%= f.error_notification %>
   
     <div class="form-inputs">
@@ -13,10 +13,16 @@
     </div>
   
     <div class="form-inputs">
-      <%= f.fields_for :items do |builder| %>
-        <%= render 'item_fields', f: builder %>
+      <%= f.fields_for :items do |item_form|%>
+        <%= item_form.input :title %>
+        <%= item_form.input :details %>
+        <%= item_form.input :type, collection: ["Food","Clothing","Furniture","Electronics","Other"] %>
+        <%= item_form.input :expiration_date %>
+        <%= item_form.input :image %>
+        <%= item_form.link_to_remove "Remove this item" %>
       <% end %>
-      <%= link_to_add_fields "Add Item", f, :items %>
+      <br>
+      <p><%= f.link_to_add "Add an item", :items %></p>
     </div>
   
     <div class="form-actions">

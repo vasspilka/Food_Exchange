@@ -26,10 +26,11 @@ gem 'entypo-rails'
 gem "breakpoint"
 gem 'sass-rails'
 gem 'simple_form'
+gem 'nested_form'
 gem 'compass-rails', '~> 1.1.3'
 
 # Bootstrap so I can work with a nicer interface
-gem 'bootstrap-sass', '~> 3.1.1'
+gem 'bootstrap-sass'
 gem 'bootstrap-generators', :git => 'git://github.com/decioferreira/bootstrap-generators.git'
 
 
@@ -38,6 +39,7 @@ gem 'bootstrap-generators', :git => 'git://github.com/decioferreira/bootstrap-ge
 group :development do
   gem 'sqlite3'
   gem 'better_errors'
+  gem 'meta_request'
   gem 'binding_of_caller', :platforms=>[:mri_19, :mri_20, :rbx]
   gem 'guard-bundler'
   gem 'guard-rails'
@@ -64,4 +66,12 @@ end
 group :production do 
   gem 'pg'  # Postgres Database
   gem 'rails_12factor', '0.0.2'
+end
+
+# Capistrano for deployment
+group :development do
+  gem 'capistrano'
+  gem 'capistrano-rvm'
+  gem 'capistrano-bundler'
+  gem 'capistrano-rails'
 end
