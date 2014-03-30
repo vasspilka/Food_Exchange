@@ -16,7 +16,7 @@
       <%= f.fields_for :items do |item_form|%>
         <%= item_form.input :title %>
         <%= item_form.input :details %>
-        <%= item_form.input :type, collection: ["Food","Clothing","Furniture","Electronics","Other"] %>
+        <%= item_form.input :item_type, collection: ["Food","Clothing","Furniture","Electronics","Other"] %>
         <%= item_form.input :expiration_date %>
         <%= item_form.input :image %>
         <%= item_form.link_to_remove "Remove this item" %>

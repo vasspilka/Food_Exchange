@@ -49,7 +49,7 @@ ActiveRecord::Schema.define(version: 20140328184546) do
     t.integer  "donation_id"
     t.string   "title"
     t.text     "details"
-    t.string   "type"
+    t.string   "item_type"
     t.date     "expiration_date"
     t.string   "image_file_name"
     t.string   "image_content_type"

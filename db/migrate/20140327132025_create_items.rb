@@ -4,7 +4,7 @@ class CreateItems < ActiveRecord::Migration
       t.belongs_to :donation, index: true
       t.string :title
       t.text :details
-      t.string :type
+      t.string :item_type
       t.date :expiration_date
       t.attachment :image
 
