@@ -1,28 +1,23 @@
-<dl class="dl-horizontal">
-
-  <dd><%= image_tag(donation.image.url(:medium)) %></dd>  
-
-  <dt>Title:</dt>
-  <dd><%= donation.title %></dd>
-
-  <dt>Donator:</dt>
-  <dd><%= donation.donator.name %></dd>
-
-  <dt>Receiver:</dt>
-  <dd><%= donation.receiver %></dd>
-
-  <dt>Description:</dt>
-  <dd><%= donation.description %></dd>
-
-  <dt>Exchange time:</dt>
-  <dd><%= donation.exchange_time %></dd>
-
-  <dt>Exchange address:</dt>
-  <dd><%= donation.exchange_address %></dd>
-
-  <dt>Received:</dt>
-  <dd><%= donation.received %></dd>
-
-  <%= link_to "Edit", edit_donation_path(donation), :class => 'btn btn-primary' %>
-  <%= render '/donations/claim', :donation => donation%>
-</dl>
+<div class="mediabox">
+  <dl class="dl-horizontal">
+  
+    <dd><%= image_tag(donation.image.url(:medium)) %></dd>  
+  
+    <h3><%= donation.title %></h3>
+  
+    <dt>Donator:</dt>
+    <dd><%= donation.donator.name %></dd>
+  
+    <dt>Description:</dt>
+    <dd><%= donation.description %></dd>
+  
+    <dt>Exchange time:</dt>
+    <dd><%= donation.exchange_time %></dd>
+  
+    <dt>Exchange address:</dt>
+    <dd><%= donation.exchange_address %></dd>
+  
+    <%= link_to "Edit", edit_donation_path(donation), :class => 'btn btn-primary' %>
+    <%= render '/donations/claim', :donation => donation%>
+  </dl>
+</div>
