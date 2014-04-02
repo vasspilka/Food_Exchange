@@ -11,6 +11,11 @@ class Donation < ActiveRecord::Base
 
   accepts_nested_attributes_for :items, allow_destroy: true
 
+  has_attached_file :image
+  validates_attachment :image,
+  :content_type => { :content_type => ["image/jpeg","image/jpg", "image/gif", "image/png"] }
+
+
   validates :title, :donator_id, presence: true
 
 end

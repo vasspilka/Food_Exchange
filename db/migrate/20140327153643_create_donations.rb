@@ -7,6 +7,8 @@ class CreateDonations < ActiveRecord::Migration
       t.text :description
       t.datetime :exchange_time
       t.string :exchange_address
+      t.date :expiration_date
+      t.attachment :image
       t.float :latitude
       t.float :longitude
       t.boolean :received
