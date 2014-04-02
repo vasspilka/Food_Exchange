@@ -1,5 +1,5 @@
 <% if current_user %>
-  <%= simple_nested_form_for(new_donation) do |f| %>
+  <%= simple_nested_form_for(@donation || new_donation) do |f| %>
     <%= f.error_notification %>
   
     <div class="form-inputs">

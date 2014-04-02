@@ -1,21 +1,12 @@
-<div class="page-header">
-  <%= link_to donations_path, :class => 'btn btn-default' do %>
-    <span class="glyphicon glyphicon-list-alt"></span>
-    Back
-  <% end %>
-  <%= link_to edit_donation_path(@donation), :class => 'btn btn-primary' do %>
-    <span class="glyphicon glyphicon-pencil"></span>
-    Edit
-  <% end %>
-  <h1>Show donation</h1>
-</div>
-
 <dl class="dl-horizontal">
+  <dt>Image:</dt>
+  <dd><%= @donation.title %></dd>  
+
   <dt>Title:</dt>
   <dd><%= @donation.title %></dd>
 
   <dt>Donator:</dt>
-  <dd><%= @donation.donator %></dd>
+  <dd><%= @donation.donator.name %></dd>
 
   <dt>Receiver:</dt>
   <dd><%= @donation.receiver %></dd>
@@ -29,16 +20,8 @@
   <dt>Exchange address:</dt>
   <dd><%= @donation.exchange_address %></dd>
 
-  <dt>Latitude:</dt>
-  <dd><%= @donation.latitude %></dd>
-
-  <dt>Longitude:</dt>
-  <dd><%= @donation.longitude %></dd>
-
   <dt>Received:</dt>
   <dd><%= @donation.received %></dd>
 
-  <dt>Valid donation:</dt>
-  <dd><%= @donation.valid_donation %></dd>
-
+  <%= link_to "Edit", edit_donation_path(@donation), :class => 'btn btn-primary' %>
 </dl>
