@@ -12,4 +12,8 @@ module ApplicationHelper
     html.html_safe
   end
 
+  def new_donation
+    return Donation.new
+  end
+
 end

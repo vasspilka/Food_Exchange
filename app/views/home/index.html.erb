@@ -12,38 +12,11 @@
 
 		<div class="content">
 			<section id="section-1">
-	
-				<div class="mediabox">
-				<%= image_tag('01.png') %>
-					<h3>Sushi Gumbo Beetroot</h3>
-			<%= content_tag_for(:tr, @donations) do |donation| %>
-			<ul>
-				<li><%= donation.title %></li>
-				<li><%= donation.donator %></li>
-				<li><%= donation.description %></li>
-				<li><%= donation.exchange_time %></li>
-				<li><%= donation.exchange_address %></li>				<li><%= link_to 'Show', donation %></li>
-
-			</ul>				
-			<% end %>
-					
-				</div>
-
-				<div class="mediabox">
-				<%= image_tag('02.png') %>
-					<h3>Pea Sprouts Fava Soup</h3>
-					<p>Lotus root water spinach fennel kombu maize bamboo shoot green bean swiss chard seakale pumpkin onion chickpea gram corn pea.</p>
-				</div>
-				<div class="mediabox">
-				<%= image_tag('03.png') %>
-					<h3>Turnip Broccoli Sashimi</h3>
-					<p>Nori grape silver beet broccoli kombu beet greens fava bean potato quandong celery. Bunya nuts black-eyed pea prairie turnip leek lentil turnip greens parsnip.</p>
-				</div>
+			  <%= render "donations/form"%>
 			</section>
 			
 
 			<section id="section-2">
-			<%= render "donations/index" %>
 
 				<div class="mediabox">
 				<%= image_tag('04.png') %>
