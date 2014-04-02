@@ -28,7 +28,7 @@ class DonationsController < ApplicationController
 
     respond_to do |format|
       if @donation.save
-        format.html { redirect_to @donation, notice: 'Donation was successfully created.' }
+        format.html { redirect_to root_path, notice: 'Donation was successfully created.' }
         format.json { render action: 'show', status: :created, location: @donation }
       else
         format.html { render action: 'new' }
@@ -69,6 +69,7 @@ class DonationsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def donation_params
-      params.require(:donation).permit(:title, :donator_id, :receiver_id, :description, :exchange_time, :exchange_address, :latitude, :longitude, :received, :valid_donation, items_attributes: [:id, :donation_id, :title, :details, :type, :expiration_date, :image, :_destroy] )
+      params.require(:donation).permit(:title, :donator_id, :receiver_id, :description, :exchange_time, :exchange_address,
+       :latitude, :longitude, :received,:valid_donation, :expiration_date, :image )
     end
 end
