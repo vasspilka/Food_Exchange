@@ -29,10 +29,10 @@ gem 'simple_form'
 gem 'nested_form'
 gem 'compass-rails', '~> 1.1.3'
 
+
 # Bootstrap so I can work with a nicer interface
 gem 'bootstrap-sass'
 gem 'bootstrap-generators', :git => 'git://github.com/decioferreira/bootstrap-generators.git'
-
 
 
 
