@@ -18,6 +18,22 @@
     <dd><%= donation.exchange_address %></dd>
   
     <%= link_to "Edit", edit_donation_path(donation), :class => 'btn btn-primary' %>
-    <%= render '/donations/claim', :donation => donation%>
+
+    <button id="open_claim_<%= "#{donation.id}" %>">Open Dialog</button>
   </dl>
+</div>
+
+<script>
+  $(function() {
+    $( "#dialog_<%= "#{donation.id}" %>" ).dialog({
+      autoOpen: false,
+    });
+    $( "#open_claim_<%= "#{donation.id}" %>" ).click(function() {
+      $( "#dialog_<%= "#{donation.id}" %>" ).dialog( "open" );
+    });
+  });
+</script>
+
+<div id="dialog_<%= "#{donation.id}" %>" title="Basic dialog">
+  <p><%= render '/donations/claim', :donation => donation%></p>
 </div>
