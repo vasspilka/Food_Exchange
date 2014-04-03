@@ -18,7 +18,7 @@
     <dd><%= donation.exchange_address %></dd>
   
     <%= link_to "Edit", edit_donation_path(donation), :class => 'btn btn-primary' %>
-
+    <br>
     <button id="open_claim_<%= "#{donation.id}" %>">I want this</button>
   </dl>
 </div>
@@ -26,6 +26,7 @@
 <script>
   $(function() {
     $( "#dialog_<%= "#{donation.id}" %>" ).dialog({
+      width: 400,
       autoOpen: false,
     });
     $( "#open_claim_<%= "#{donation.id}" %>" ).click(function() {
@@ -34,6 +35,6 @@
   });
 </script>
 
-<div id="dialog_<%= "#{donation.id}" %>" title="Basic dialog">
+<div id="dialog_<%= "#{donation.id}" %>">
   <p><%= render '/donations/claim', :donation => donation%></p>
 </div>
