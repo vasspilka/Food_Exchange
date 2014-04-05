@@ -23,18 +23,7 @@
   </dl>
 </div>
 
-<script>
-  $(function() {
-    $( "#dialog_<%= "#{donation.id}" %>" ).dialog({
-      width: 400,
-      autoOpen: false,
-    });
-    $( "#open_claim_<%= "#{donation.id}" %>" ).click(function() {
-      $( "#dialog_<%= "#{donation.id}" %>" ).dialog( "open" );
-    });
-  });
-</script>
 
 <div id="dialog_<%= "#{donation.id}" %>">
-  <p><%= render '/donations/claim', :donation => donation%></p>
+  <p><%= render '/donations/claim', :donation => donation if current_user %></p>
 </div>

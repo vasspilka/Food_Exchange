@@ -5,3 +5,15 @@
   <%= f.hidden_field :donation_id %>
   <%= f.submit "Claim", class: "" %>
 <% end %>
+
+<script>
+  $(function() {
+    $( "#dialog_<%= "#{donation.id}" %>" ).dialog({
+      width: 400,
+      autoOpen: false,
+    });
+    $( "#open_claim_<%= "#{donation.id}" %>" ).click(function() {
+      $( "#dialog_<%= "#{donation.id}" %>" ).dialog( "open" );
+    });
+  });
+</script>
