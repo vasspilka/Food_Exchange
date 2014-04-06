@@ -1,3 +1,5 @@
+<button id="open_claim_<%= "#{donation.id}" %>">I want this</button>
+
 <%= simple_form_for(current_user.claims.build(donation_id: donation.id),
              remote: true) do |f| %>
   <%= f.input :suggested_address, input_html: {value: donation.exchange_address} %>
