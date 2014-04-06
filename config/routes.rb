@@ -1,5 +1,6 @@
 FoodExchange::Application.routes.draw do
 
+  get "shared/_nav"
   resources :donations
 
   root :to => "home#index"
