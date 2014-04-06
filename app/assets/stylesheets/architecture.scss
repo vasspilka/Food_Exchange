@@ -1,0 +1,114 @@
+@import "compass";
+@import "compass/reset";
+
+
+
+// 	FONTS //
+
+ // IdealSans //
+
+@font-face {
+	font-family: "IdealSans";
+	font-style: normal;
+	font-weight: 100;
+	src: url("IdealSans-Thin-Pro.otf") format('opentype');
+}
+
+
+@font-face {
+	font-family: "IdealSans";
+	font-style: normal;
+	font-weight: 200;
+	src: url("IdealSans-Light-Pro.otf") format('opentype');
+}
+
+@font-face {
+	font-family: "IdealSans";
+	font-style: normal;
+	font-weight: 400;
+	src: url("IdealSans-Medium-Pro.otf") format('opentype');
+}
+
+@font-face {
+	font-family: "IdealSans";
+	font-style: normal;
+	font-weight: 500;
+	src: url("IdealSans-Semibold-Pro.otf") format('opentype');
+}
+
+
+
+
+
+@font-face {
+	font-family: "Helvetica";
+	font-style: normal;
+	font-weight: 100;
+	src: url("HelveticaNeueUltraLight.ttf") format('truetype');
+}
+
+
+@font-face {
+	font-family: "Helvetica";
+	font-style: normal;
+	font-weight: 200;
+	src: url("HelveticaNeueMedium.ttf") format('truetype');
+}
+
+@font-face {
+	font-family: "Helvetica";
+	font-style: normal;
+	font-weight: 300;
+	src: url("HelveticaNeueLight.ttf") format('truetype');
+}
+
+
+// FONT-STACK //
+
+$main-font: "IdealSans";
+$secondary-font: "Helvetica";
+
+// LINK COLORS //
+
+$normal : #757575;
+$hover : #757575;
+$active : #757575;
+$visited: #757575;
+$focus: #757575;
+
+
+
+/* -----------------------------------------
+   MIXINS
+----------------------------------------- */
+
+// LINK COLORS MIXIN //
+
+a	{ @include link-colors($normal, $hover, $active, $visited, $focus); 
+
+	text-decoration: none;
+}
+
+
+
+// FONT SMOOTHING MIXIN //
+@mixin font-smoothing($value: on) {
+	@if $value == on {
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+	}
+	@else {
+		-webkit-font-smoothing: subpixel-antialiased;
+		-moz-osx-font-smoothing: auto;
+	}
+}
+
+// END OF MIXINS //
+
+
+
+
+// USEFUL MISC HTML STUFF //
+
+
+

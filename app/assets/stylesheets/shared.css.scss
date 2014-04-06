@@ -1,0 +1,46 @@
+@import "architecture";
+
+
+.sitenav	{
+	/*position: fixed;*/
+	font-family: $main-font;
+	font-size: 0.9rem;
+	font-weight:200;
+	top: 0%;
+	width: 100%;
+	height: 4rem;
+	background-color: rgba(0, 0, 0, 0);
+	z-index: 9;
+
+	@include transition-property(background-color, height);
+	@include transition-duration(1s);
+
+
+	 ul	{
+		list-style-type: none;
+		margin: 0;
+		float: right;
+		padding: 1.5rem 0 1.875rem 0em;
+
+		li	{
+
+			display: inline;
+			margin-right: 2rem;
+			text-transform: uppercase;
+			font-variant: small-caps;
+			i	{
+			margin-right: 0.6em;
+			opacity: 0.5;
+			font-size: 1rem;
+			}
+		}
+	}
+	
+	.float-left	{
+		float: left;
+		margin-left: 1rem;
+		font-weight: 400;
+
+	}
+
+}
