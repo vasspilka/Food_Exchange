@@ -1,12 +1,14 @@
 <button id="open_claim_<%= "#{donation.id}" %>">I want this</button>
 
-<%= simple_form_for(current_user.claims.build(donation_id: donation.id),
-             remote: true) do |f| %>
-  <%= f.input :suggested_address, input_html: {value: donation.exchange_address} %>
-  <%= f.input :suggested_time, input_html: {value: donation.exchange_time} %>
-  <%= f.hidden_field :donation_id %>
-  <%= f.submit "Claim", class: "" %>
-<% end %>
+<div id="dialog_<%= "#{donation.id}" %>">
+  <%= simple_form_for(current_user.claims.build(donation_id: donation.id),
+               remote: true) do |f| %>
+    <%= f.input :suggested_address, input_html: {value: donation.exchange_address} %>
+    <%= f.input :suggested_time, input_html: {value: donation.exchange_time} %>
+    <%= f.hidden_field :donation_id %>
+    <%= f.submit "Claim", class: "" %>
+  <% end %>
+</div>
 
 <script>
   $(function() {

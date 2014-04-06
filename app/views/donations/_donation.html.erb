@@ -18,12 +18,11 @@
     <dd><%= donation.exchange_address %></dd>
   
     <%= link_to "Edit", edit_donation_path(donation), :class => 'btn btn-primary' %>
-
-    <div id="dialog_<%= "#{donation.id}" %>">
-      <p><%= render '/donations/claim', :donation => donation if current_user %></p>
-    </div>
-
+    <br>
+    <%= render '/donations/claim', :donation => donation if current_user %>
   </dl>
 </div>
 
 
+
+  
