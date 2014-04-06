@@ -71,7 +71,7 @@ html, body {
                  position: relative;
                  
                  @include transition-property(all);
-                 @include transition-duration(0.5s);
+                 @include transition-duration(0.4s);
                  
 
                  &:first-child.tab-current  {
