@@ -21,7 +21,12 @@ html, body {
     font-family: $main-font, Calibri, Arial, sans-serif;
     color: #757575;
     @include font-smoothing(on);
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    overflow: hidden;
 }
+
 
 
 // COMPONENTS // 
@@ -114,15 +119,18 @@ html, body {
 
 
 
-
-
 /* Content */
+
 .content section {
     font-size: 1.25em;
     padding: 3em 1em;
     display: none;
     max-width: 1230px;
     margin: 0 auto;
+    overflow:  scroll;
+    height: 500px;
+    
+
 }
 
 .content section:before,
@@ -144,6 +152,7 @@ html, body {
 
 .content section.content-current {
     display: block;
+
 }
 
 .mediabox {
