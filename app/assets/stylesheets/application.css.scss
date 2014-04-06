@@ -38,16 +38,19 @@ html, body {
     overflow: hidden;
     margin: 1em 0 2em;
     font-weight: 300;
-    
+ 
     nav {
         text-align: center;
+        height: 49px;
         a {
         color: #becbd2;
         display: block;
         font-size: 1.2rem;
         line-height: 2.5;
-        padding: 0 1.25em;
+        padding: 0 1.4rem 0 1.4rem; 
         white-space: nowrap;        
+        @include transition-property(color);
+        @include transition-duration(0.3s);
         &:hover {color: #768e9d;}
         
         }
@@ -67,14 +70,19 @@ html, body {
                  float: left;
                  position: relative;
                  
+                 @include transition-property(all);
+                 @include transition-duration(0.5s);
+                 
+
                  &:first-child.tab-current  {
                 border: 1px solid #44C102;
                 box-shadow: inset 0 2px #44C102;
                 border-bottom: none;
                 z-index: 100;
                 
+                
                 a   {color: #44C102;}
-                &.tab-current:before, &.tab-current:after {background:#44C102;}
+                &.tab-current:before, &.tab-current:after {background:#44C102; }
                  }
                  
                  &:nth-child(2).tab-current {
@@ -121,11 +129,61 @@ html, body {
 
 /* Content */
 
+.content #section-1 {
+    background: url('campbell-soup.jpg') no-repeat top center fixed;
+    width: 100%;
+    form    {
+    text-align: center;
+    label   {
+        font-family: $main-font;
+        font-size: 1rem;
+        font-weight: 400;
+        text-transform: lowercase;
+        font-variant: small-caps;
+        
+    }
+    input   {
+        font-family: $main-font;
+        font-size: 1rem;
+        font-weight: 100;
+        margin: 0.3rem 0 0 0;
+        padding: 0.5rem 0.3rem 0.5rem 0.3rem;
+        width: 10rem;
+        border: none;
+        background: #ccc;
+        color: rgba(250,250,250,1);
+        text-align: center;
+
+        line-height: 1;
+        opacity: 1;
+        @include border-radius(3px);
+        
+        @include transition-property(padding, background, opacity);
+        @include transition-duration(0.3s);
+        
+            &:focus {
+                outline: none;
+                background: #6CF180;
+                padding: 0.6rem 1.3rem 0.6rem 1.3rem;
+                opacity: 1;
+            }
+    }
+}
+}
+
+
+.content #section-3 {
+    width: 100%;
+    background: url('example-bg.jpg') no-repeat center center;
+    @include background-size(100% 100%);
+
+}
+
 .content section {
     font-size: 1.25em;
     padding: 3em 1em;
     display: none;
-    max-width: 1230px;
+    max-width: 100%;
     margin: 0 auto;
     overflow:  scroll;
     height: 500px;
