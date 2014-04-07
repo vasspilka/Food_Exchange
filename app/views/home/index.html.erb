@@ -16,6 +16,7 @@
 			</section>
 			
 			<section id="section-2">
+				<%= image_tag(('receive.svg'),  :class => "receive") %>
 			<div class="inner-tab">
               <%= render partial: "donations/donation" , collection: Donation.all unless Donation.blank? %>
               	</div>

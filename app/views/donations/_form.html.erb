@@ -3,6 +3,7 @@
     <%= f.error_notification %>
   
     <div class="form-inputs">
+    <%= image_tag('food-bank.svg') %>
       <%= f.input :title %>
       <%= f.hidden_field :donator_id, :value => "#{current_user.id}"%>
       <%# f.hidden_field :receiver_id %>

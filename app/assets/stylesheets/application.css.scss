@@ -172,7 +172,15 @@ html, body {
 }
 
 
-.content #section-3 {
+.content    #section-2  {
+    img.receive {
+        width: 65px;
+        display: block;
+        margin: 0 auto 1rem auto;
+    }
+}
+
+.content    #section-3 {
     width: 100%;
     background: url('example-bg.jpg') no-repeat center center;
     @include background-size(100% 100%);
@@ -181,7 +189,7 @@ html, body {
 
 .content section {
     font-size: 1.25em;
-    padding: 3em 1em;
+    padding: 2rem 1em;
     display: none;
     max-width: 100%;
     margin: 0 auto;
