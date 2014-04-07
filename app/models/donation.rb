@@ -15,8 +15,5 @@ class Donation < ActiveRecord::Base
 
   validates :title, :donator_id, presence: true
 
-  def claimed?(current_user)
-    Claim.where(user_id: current_user.id , donation_id: self.id )
-  end
 
 end

@@ -12,4 +12,7 @@ class User < ActiveRecord::Base
   def claim!(donation)
   	claims.create!(donation_id: donation.id) end	
 
+  def claimed?(donation)
+    claims.find_by(donation_id: donation.id) end
+
 end

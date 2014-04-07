@@ -39,8 +39,8 @@
             <td><%= donation.longitude %></td>
             <td><%= donation.received %></td>
             <td><%= donation.valid_donation %></td>
-            <% if current_user%>
-              <% if donation.claimed? %>
+            <% if current_user %>
+              <% if current_user.claimed?(donation) %>
                 <td><%= render 'claim', :donation => donation %></td>
               <% else %>
                 <td>Claimed</td>
