@@ -1,6 +1,5 @@
 FoodExchange::Application.routes.draw do
 
-  get "shared/_nav"
   resources :donations
 
   root :to => "home#index"
@@ -9,7 +8,7 @@ FoodExchange::Application.routes.draw do
   match '/about',   to: 'static_pages#about' ,  via: 'get'
   match '/help',    to: 'static_pages#help', via: 'get'
 
-  devise_for :users, :controllers => {:registrations => "registrations"}
+  devise_for :users, :controllers => {registrations: "registrations", omniauth_callbacks: "omniauth_callbacks"}
 
   resources :items, :users, :donations
 

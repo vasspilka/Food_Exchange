@@ -30,10 +30,14 @@ class DeviseCreateUsers < ActiveRecord::Migration
       # t.string   :unlock_token # Only if unlock strategy is :email or :both
       # t.datetime :locked_at
 
+
+      ## Omniauth Facebook
+      t.string :provider
+      t.string :uid
+      
       ## Other info
       t.string :username
       t.string :name
-      t.string :surname
       t.date   :birthday
       t.string :address
       t.string :gravatar

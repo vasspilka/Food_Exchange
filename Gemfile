@@ -4,6 +4,7 @@ ruby '2.1.1'
 gem 'rails', '4.0.3'
 gem 'turbolinks'
 gem 'devise'
+gem 'omniauth-facebook'
 
 # Javascript related gems
 gem 'uglifier', '>= 1.3.0'        # Removes all spaces from css files.
@@ -41,6 +42,7 @@ group :development do
   gem 'sqlite3'
   gem 'better_errors'
   gem 'meta_request'
+  gem 'quiet_assets' # Better logs
   gem 'binding_of_caller', :platforms=>[:mri_19, :mri_20, :rbx]
   gem 'guard-bundler'
   gem 'guard-rails'
