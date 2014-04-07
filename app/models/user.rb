@@ -14,5 +14,8 @@ class User < ActiveRecord::Base
 
   def claimed?(donation)
     claims.find_by(donation_id: donation.id) end
+  
+  def created?(donation)
+  	donations.find(donation.id) end
 
 end

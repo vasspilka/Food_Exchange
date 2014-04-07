@@ -40,10 +40,12 @@
             <td><%= donation.received %></td>
             <td><%= donation.valid_donation %></td>
             <% if current_user %>
-              <% if current_user.claimed?(donation) %>
-                <td><%= render 'claim', :donation => donation %></td>
-              <% else %>
+              <% if current_user.created?(donation) %>
+                <td><%= "#{donation.claims.count} Claims" %></td>
+              <% elsif current_user.claimed?(donation) %>
                 <td>Claimed</td>
+              <% else %>
+                <td><%= render 'claim', :donation => donation %></td>
               <% end %>
             <% end %>
             <td><%= link_to 'Show', donation %></td>
